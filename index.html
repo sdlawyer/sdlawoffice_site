@@ -905,7 +905,11 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
   function loadNaver(param){
     var sc=document.createElement('script');
     sc.src='https://oapi.map.naver.com/openapi/v3/maps.js?'+param+'='+NAVER_MAP_KEY+'&submodules=geocoder';
-    sc.onload=function(){ if(window.naver&&naver.maps&&naver.maps.Service){initNaverMap()} };
+    sc.onload=function(){
+      if(!(window.naver&&naver.maps)){console.warn('naver.maps 없음');return}
+      if(naver.maps.Service&&naver.maps.Service.geocode){initNaverMap()}
+      else{naver.maps.onJSContentLoaded=initNaverMap}
+    };
     sc.onerror=function(){console.warn('naver maps script load error',param)};
     document.head.appendChild(sc);
   }

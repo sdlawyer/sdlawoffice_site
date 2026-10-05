@@ -293,7 +293,7 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
 .case p{font-size:15px}
 .case .by span{margin-left:auto;color:var(--muted);font-weight:500}
 .case.hide{display:none}
-.filters{margin:44px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+.filters{margin:52px 0 0;display:flex;gap:8px;flex-wrap:wrap}
 .filters button{font-family:var(--sans);font-size:14.5px;font-weight:600;border:1.5px solid var(--line);background:transparent;color:var(--text);padding:9px 18px;border-radius:999px;cursor:pointer;transition:all .2s}
 .filters button:hover{border-color:var(--navy)}
 .filters button.on{background:var(--navy);border-color:var(--navy);color:#fff}
@@ -534,25 +534,12 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
     <h2 class="sec-title">담당한 사건과 결과</h2>
     <p class="sec-lede">직접 수행하여 결과를 낸 사건들입니다. 의뢰인 보호를 위해 당사자와 사건번호는 밝히지 않습니다.</p>
 
-    <article class="case-feature">
-      <div class="cf-left">
-        <span class="cf-tag">손해배상 · 피고 대리</span>
-        <strong>전부 승소</strong>
-        <div class="cf-num">4,898만 원 청구 <em>전부 기각</em></div>
-      </div>
-      <div class="cf-right">
-        <h3>필라테스 수업 중 부상, 강사의 손해배상 책임을 전부 부정한 판결</h3>
-        <p>수강생이 수업 중 무릎 인대를 다쳤다며 강사와 센터 운영자를 상대로 4,898만 원을 청구한 사건입니다. 강사를 대리하여 수업 영상과 자세 교정 과정, 수업 중 반복해 상태를 확인한 기록으로 주의의무 위반이 없었음을 입증했습니다.</p>
-        <p>법원은 강사의 과실을 인정할 증거가 없다고 보아 청구를 기각했고, 강사의 책임을 전제로 한 운영자에 대한 청구도 함께 기각했습니다. 운동 지도 중 사고에서 지도자의 책임 범위를 정면으로 다툰 사건입니다.</p>
-        <div class="by"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>1심 승소 (청구 전부 기각)</div>
-      </div>
-    </article>
 
     <div class="filters" role="tablist">
       <button class="on" data-f="all">전체 <i>26</i></button>
       <button data-f="criminal">형사 <i>4</i></button>
       <button data-f="admin">행정 <i>7</i></button>
-      <button data-f="civil">민사 <i>10</i></button>
+      <button data-f="civil">민사 <i>11</i></button>
       <button data-f="deal">합의 <i>4</i></button>
     </div>
     <div class="case-grid">
@@ -621,6 +608,12 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
         <h3>의료행위 개념을 다툰 항소심, 보건복지부 항소 기각</h3>
         <p>자기 자신에 대한 투약이 의료법상 의료행위인지가 쟁점이 된 항소심입니다. 서울고등법원이 1심 판단을 그대로 인용해 보건복지부의 항소를 기각했습니다.</p>
         <div class="by"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>2심 승소 (항소 기각)</div>
+      </article>
+      <article class="case" data-cat="civil">
+        <div class="case-top"><div class="tags"><span>민사</span><span>손해배상</span></div></div>
+        <h3>필라테스 수업 중 부상, 강사의 손해배상 책임 전부 부정</h3>
+        <p>수강생이 수업 중 무릎 인대를 다쳤다며 강사와 센터 운영자를 상대로 손해배상을 청구한 사건입니다. 강사를 대리하여 수업 영상과 자세 교정 과정, 수업 중 반복해 상태를 확인한 기록으로 주의의무 위반이 없었음을 입증했고, 운영자에 대한 청구까지 함께 기각되었습니다.</p>
+        <div class="by"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>1심 승소 (청구 전부 기각)</div>
       </article>
       <article class="case" data-cat="civil">
         <div class="case-top"><div class="tags"><span>민사</span><span>전세보증금</span></div></div>

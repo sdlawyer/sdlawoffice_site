@@ -890,22 +890,30 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
   /* 네이버 지도: 네이버 클라우드 플랫폼 Maps 키를 아래에 넣으면 지도가 표시됩니다 */
   var NAVER_MAP_KEY="9uxq0amvrn";
   var OFFICE_ADDR="서울 서초구 서초대로45길 20";
-  if(NAVER_MAP_KEY){
+  function initNaverMap(){
+    naver.maps.Service.geocode({query:OFFICE_ADDR},function(status,res){
+      if(status!==naver.maps.Service.Status.OK||!res.v2.addresses.length){console.warn('geocode 실패',status);return}
+      var a=res.v2.addresses[0], pos=new naver.maps.LatLng(parseFloat(a.y),parseFloat(a.x));
+      var map=new naver.maps.Map('naverMap',{center:pos,zoom:16,scaleControl:false,logoControl:true,mapDataControl:false});
+      new naver.maps.Marker({position:pos,map:map,title:'법률사무소 수담'});
+      var iw=new naver.maps.InfoWindow({content:'<div style="padding:10px 14px;font-size:13px;font-weight:600;color:#0B2A4F">법률사무소 수담<br><span style="font-weight:400;color:#555">변호사교육문화관 5층</span></div>',borderWidth:0});
+      iw.open(map,pos);
+      document.getElementById('mapFallback').style.display='none';
+    });
+  }
+  var _naverTried=0;
+  function loadNaver(param){
     var sc=document.createElement('script');
-    sc.src='https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId='+NAVER_MAP_KEY+'&submodules=geocoder';
-    sc.onload=function(){
-      naver.maps.Service.geocode({query:OFFICE_ADDR},function(status,res){
-        if(status!==naver.maps.Service.Status.OK||!res.v2.addresses.length) return;
-        var a=res.v2.addresses[0], pos=new naver.maps.LatLng(parseFloat(a.y),parseFloat(a.x));
-        var map=new naver.maps.Map('naverMap',{center:pos,zoom:16,scaleControl:false,logoControl:true,mapDataControl:false});
-        new naver.maps.Marker({position:pos,map:map,title:'법률사무소 수담'});
-        var iw=new naver.maps.InfoWindow({content:'<div style="padding:10px 14px;font-size:13px;font-weight:600;color:#0B2A4F">법률사무소 수담<br><span style="font-weight:400;color:#555">변호사교육문화관 5층</span></div>',borderWidth:0});
-        iw.open(map,pos);
-        document.getElementById('mapFallback').style.display='none';
-      });
-    };
+    sc.src='https://oapi.map.naver.com/openapi/v3/maps.js?'+param+'='+NAVER_MAP_KEY+'&submodules=geocoder';
+    sc.onload=function(){ if(window.naver&&naver.maps&&naver.maps.Service){initNaverMap()} };
+    sc.onerror=function(){console.warn('naver maps script load error',param)};
     document.head.appendChild(sc);
   }
+  window.navermap_authFailure=function(){
+    console.warn('naver maps 인증 실패 ('+(_naverTried===0?'ncpKeyId':'ncpClientId')+')');
+    if(_naverTried===0){_naverTried=1;loadNaver('ncpClientId')}
+  };
+  if(NAVER_MAP_KEY){ loadNaver('ncpKeyId') }
 
   (function(){var v=document.getElementById('heroVideo');if(!v)return;
     v.addEventListener('canplay',function(){v.classList.add('on')});

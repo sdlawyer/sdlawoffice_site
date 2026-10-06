@@ -535,7 +535,7 @@ html.lowpower .hero-bg .mesh,html.lowpower .hero-bg .lines{animation:none}
   <div class="hero-bg" aria-hidden="true">
     <div class="mesh"></div>
     <div class="lines"></div>
-    <video id="heroVideo" muted autoplay loop playsinline preload="metadata" poster="">
+    <video id="heroVideo" muted autoplay loop playsinline preload="metadata" poster="hero-poster.jpg">
       <source src="hero.mp4" type="video/mp4" />
     </video>
     <div class="shade"></div>
@@ -1192,7 +1192,7 @@ html.lowpower .hero-bg .mesh,html.lowpower .hero-bg .lines{animation:none}
     var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){io.disconnect();loadNaver('ncpKeyId')}},{rootMargin:'600px 0px'});io.observe(loc)})();
 
   (function(){var v=document.getElementById('heroVideo');if(!v)return;
-    v.addEventListener('canplay',function(){v.classList.add('on')});
+    v.addEventListener('canplay',function(){v.classList.add('on')});v.addEventListener('loadedmetadata',function(){v.classList.add('on')});
     v.addEventListener('error',function(){v.remove()},true);
     var src=v.querySelector('source');if(src){src.addEventListener('error',function(){v.remove()})}
   })();

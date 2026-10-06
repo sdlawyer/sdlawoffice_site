@@ -586,6 +586,7 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
         <div class="pa-row"><b>노동 · 직장</b><span>직장 내 괴롭힘 대응, 부당해고·징계와 임금·퇴직금 분쟁, 퇴사·이직을 둘러싼 고소, 동업 계약과 투자금 분쟁</span><a class="pa-more" href="labor.html">자세히 보기 →</a></div>
         <div class="pa-row"><b>스포츠 · 엔터테인먼트</b><span>선수·지도자 계약, 에이전트 분쟁, 초상권, 광고·후원 계약, 체육단체 징계</span><a class="pa-more" href="sports.html">자세히 보기 →</a></div>
         <div class="pa-row"><b>게임 · 인터넷</b><span>계정·아이템 분쟁, 플랫폼 이용정지, 온라인 사기 피해</span></div>
+          <div class="pa-row"><b>콘텐츠 · 크리에이터</b><span>웹소설·웹툰 연재·출판·IP 계약과 정산 분쟁, 유튜브·스트리밍 크리에이터 전속계약·광고·악플 대응</span><a class="pa-more" href="creator.html">자세히 보기 →</a></div>
         <div class="pa-row"><b>교통사고</b><span>손해배상과 보험사 분쟁, 교통사고처리특례법 위반 형사사건</span></div>
         <div class="pa-row"><b>기업 자문 · 계약</b><span>정기 법률자문, 광고모델·팝업스토어·행사 계약 검토, 영문 계약서와 해외 법인 거래 자문, 매각·투자 협상 자문</span></div>
       </div>
@@ -1058,7 +1059,7 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
     <div class="c-grid">
       <div class="form">
         <div class="fld"><label for="f-type">접수 종류</label><select id="f-type"><option value="사건 상담">사건 상담 (개인·사업자)</option><option value="기업·에이전시 자문">기업·에이전시 자문 (계약 검토·정기 자문)</option></select></div>
-        <div class="fld"><label for="f-area">분야</label><select id="f-area"><option value="">선택</option><option>민사·부동산</option><option>형사</option><option>행정 (면허·자격·처분)</option><option>의료</option><option>교권·교육활동 보호</option><option>노동·직장</option><option>스포츠·엔터테인먼트</option><option>게임·인터넷</option><option>교통사고</option><option>기업 자문·계약</option><option>기타</option></select></div>
+        <div class="fld"><label for="f-area">분야</label><select id="f-area"><option value="">선택</option><option>민사·부동산</option><option>형사</option><option>행정 (면허·자격·처분)</option><option>의료</option><option>교권·교육활동 보호</option><option>노동·직장</option><option>스포츠·엔터테인먼트</option><option>게임·인터넷</option><option>콘텐츠·크리에이터</option><option>교통사고</option><option>기업 자문·계약</option><option>기타</option></select></div>
         <div class="fld"><label for="f-name">성함</label><input id="f-name" type="text" autocomplete="name" /></div>
         <div class="fld"><label for="f-contact">연락받을 번호 또는 이메일</label><input id="f-contact" type="text" autocomplete="tel" /></div>
         <div class="fld"><label for="f-msg">상담 내용</label><textarea id="f-msg" placeholder="사건의 경위를 시간 순서로 적어주시고, 받은 서류(소장·출석요구서·처분 통지서 등)가 있으면 종류를 적어주세요."></textarea></div>
@@ -1186,6 +1187,6 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
   <a href="#contact" id="mbarKakao">카카오톡</a>
   <a href="#contact" class="pri">상담 신청</a>
 </div>
-<script>(function(){try{var q=new URLSearchParams(location.search);var t=q.get('type'),a=q.get('area');var map={teacher:'교권·교육활동 보호',civil:'민사·부동산',criminal:'형사',admin:'행정 (면허·자격·처분)',medical:'의료',labor:'노동·직장',sports:'스포츠·엔터테인먼트',game:'게임·인터넷',traffic:'교통사고',corp:'기업 자문·계약'};if(t==='advice'){var ft=document.getElementById('f-type');if(ft)ft.value='기업·에이전시 자문'}if(a&&map[a]){var fa=document.getElementById('f-area');if(fa)fa.value=map[a]}}catch(e){}})();</script>
+<script>(function(){try{var q=new URLSearchParams(location.search);var t=q.get('type'),a=q.get('area');var map={teacher:'교권·교육활동 보호',civil:'민사·부동산',criminal:'형사',admin:'행정 (면허·자격·처분)',medical:'의료',labor:'노동·직장',sports:'스포츠·엔터테인먼트',game:'게임·인터넷',creator:'콘텐츠·크리에이터',traffic:'교통사고',corp:'기업 자문·계약'};if(t==='advice'){var ft=document.getElementById('f-type');if(ft)ft.value='기업·에이전시 자문'}if(a&&map[a]){var fa=document.getElementById('f-area');if(fa)fa.value=map[a]}}catch(e){}})();</script>
 </body>
 </html>

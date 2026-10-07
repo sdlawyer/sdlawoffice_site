@@ -434,7 +434,14 @@ footer{background:var(--deep);color:#8392A8;padding:44px 0 48px;font-size:14px}
 .pc-label{font-size:14px;color:var(--muted);margin-right:6px}
 .press-channels a{font-size:14px;font-weight:600;color:var(--navy);border:1.5px solid var(--line);padding:9px 16px;border-radius:999px}
 .press-channels a:hover{border-color:var(--navy)}
-@media(max-width:700px){.press-item{padding:24px 22px}}
+.press-video{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:center}
+.press-video:hover{transform:none}
+.pv-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:12px;overflow:hidden;background:#000;cursor:pointer}
+.pv-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.pv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv-play{position:absolute;left:50%;top:50%;width:68px;height:48px;transform:translate(-50%,-50%);border-radius:14px;background:rgba(11,42,79,.88)}
+.pv-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+@media(max-width:700px){.press-item{padding:24px 22px}.press-video{grid-template-columns:1fr;gap:20px}}
 
 .yr{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.04em}
 .f-link{color:#C6D0E2;text-decoration:underline}
@@ -560,7 +567,7 @@ body.menu-open{overflow:hidden;touch-action:none}
 </header>
 
 <div class="ticker" aria-label="주요 사건 결과">
-  <div class="ticker-track"><div class="ticker-set"><span>상관폭행 항소심 무죄</span><span>업무상배임 고소, 전원 혐의없음</span><span>치과의사 자격정지처분 취소 7건</span><span>회사 손해배상 청구 전부 인용</span><span>전세보증금 반환 승소 · 강제경매 집행</span><span>필라테스 강사 손해배상 전부 기각</span><span>동업 위약금 청구 대부분 방어</span><span>손해배상 소송 대법원 확정</span><span>의료광고 의료법위반 무죄</span><span>상가 건물인도 전부 승소</span><span>드라마 제작사 투자금 반환 전부 인용</span><span>9개 혐의 고소, 혐의없음 불송치</span><span>배우 광고모델 계약 자문</span></div><div class="ticker-set" aria-hidden="true"><span>상관폭행 항소심 무죄</span><span>업무상배임 고소, 전원 혐의없음</span><span>치과의사 자격정지처분 취소 7건</span><span>회사 손해배상 청구 전부 인용</span><span>전세보증금 반환 승소 · 강제경매 집행</span><span>필라테스 강사 손해배상 전부 기각</span><span>동업 위약금 청구 대부분 방어</span><span>손해배상 소송 대법원 확정</span><span>의료광고 의료법위반 무죄</span><span>상가 건물인도 전부 승소</span><span>드라마 제작사 투자금 반환 전부 인용</span><span>9개 혐의 고소, 혐의없음 불송치</span><span>배우 광고모델 계약 자문</span></div></div>
+  <div class="ticker-track"><div class="ticker-set"><span>상관폭행 항소심 무죄</span><span>업무상배임 고소, 전원 혐의없음</span><span>치과의사 자격정지처분 취소 다수</span><span>회사 손해배상 청구 전부 인용</span><span>전세보증금 반환 승소 · 강제경매 집행</span><span>필라테스 강사 손해배상 전부 기각</span><span>동업 위약금 청구 대부분 방어</span><span>손해배상 소송 대법원 확정</span><span>의료광고 의료법위반 무죄</span><span>상가 건물인도 전부 승소</span><span>드라마 제작사 투자금 반환 전부 인용</span><span>9개 혐의 고소, 혐의없음 불송치</span><span>배우 광고모델 계약 자문</span></div><div class="ticker-set" aria-hidden="true"><span>상관폭행 항소심 무죄</span><span>업무상배임 고소, 전원 혐의없음</span><span>치과의사 자격정지처분 취소 다수</span><span>회사 손해배상 청구 전부 인용</span><span>전세보증금 반환 승소 · 강제경매 집행</span><span>필라테스 강사 손해배상 전부 기각</span><span>동업 위약금 청구 대부분 방어</span><span>손해배상 소송 대법원 확정</span><span>의료광고 의료법위반 무죄</span><span>상가 건물인도 전부 승소</span><span>드라마 제작사 투자금 반환 전부 인용</span><span>9개 혐의 고소, 혐의없음 불송치</span><span>배우 광고모델 계약 자문</span></div></div>
 </div>
 
 <section class="way" id="way">
@@ -671,12 +678,12 @@ body.menu-open{overflow:hidden;touch-action:none}
         <div class="cf-left">
           <span class="cf-tag">행정 · 원고 대리</span>
           <strong>처분 취소</strong>
-          <div class="cf-num">1심 5건 · <em>항소심 2건</em></div>
+          <div class="cf-num">1심부터 <em>항소심까지</em></div>
         </div>
         <div class="cf-right">
-          <h3>치과의사 자격정지처분, 일곱 건 모두 취소</h3>
+          <h3>치과의사 자격정지처분 취소소송, 전부 승소</h3>
           <p>전문의약품을 구매해 본인이 복용한 행위가 무면허 의료행위라는 이유로 보건복지부가 내린 자격정지처분에 대한 취소소송입니다. 자기 자신에 대한 투약은 의료법이 규제하는 의료행위로 볼 수 없다는 판단을 받아냈습니다.</p>
-          <p>1심 5건 모두 처분이 취소되었고, 보건복지부가 항소한 2건도 서울고등법원에서 항소 기각되었습니다.</p>
+          <p>1심에서 모두 처분이 취소되었고, 보건복지부가 항소한 사건도 서울고등법원에서 모두 항소 기각되었습니다.</p>
           <div class="by"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>1·2심 승소 (처분 취소)</div>
         </div>
       </article>
@@ -929,7 +936,7 @@ body.menu-open{overflow:hidden;touch-action:none}
       <div class="sec-label">변호사 소개</div>
       <h2 class="prof-name">이수담</h2>
       <div class="prof-role">법률사무소 수담 대표변호사</div>
-      <p class="prof-intro">법무법인에서 민사·형사·행정 소송을 두루 수행했습니다. 치과의사 면허 자격정지처분 취소소송에서 1심 5건과 항소심 2건 모두 처분 취소 판결을 받았고, 상관폭행 사건에서는 1심 유죄를 항소심 무죄로 뒤집었습니다. 업무상배임 고소 사건에서 피의자 8명 전원 혐의없음 불송치, 손해배상 소송에서 청구 전부 기각과 전부 인용을 각각 이끌어냈습니다. 수사 단계부터 대법원 상고심까지, 사건의 모든 단계를 수행했습니다. 서면 못지않게 법정 신문을 중시하고, 신문 준비에 시간을 가장 많이 씁니다.</p>
+      <p class="prof-intro">법무법인에서 민사·형사·행정 소송을 두루 수행했습니다. 여러 건의 치과의사 면허 자격정지처분 취소소송에서 1심과 항소심 모두 처분 취소 판결을 받았고, 상관폭행 사건에서는 1심 유죄를 항소심 무죄로 뒤집었습니다. 업무상배임 고소 사건에서 피의자 8명 전원 혐의없음 불송치, 손해배상 소송에서 청구 전부 기각과 전부 인용을 각각 이끌어냈습니다. 수사 단계부터 대법원 상고심까지, 사건의 모든 단계를 수행했습니다. 서면 못지않게 법정 신문을 중시하고, 신문 준비에 시간을 가장 많이 씁니다.</p>
       <p class="prof-intro">변호사가 되기 전에는 방송사와 프로축구단을 거쳐 외국계 기업에서 일했습니다. 2025년 12월 법률사무소 수담을 열었습니다.</p>
       <div class="career">
         <dl>
@@ -1063,6 +1070,18 @@ body.menu-open{overflow:hidden;touch-action:none}
     <h2 class="sec-title">언론 보도와 인터뷰</h2>
     <p class="sec-lede">이수담 변호사의 인터뷰와 법률 견해가 실린 보도입니다.</p>
     <div class="press-list">
+      <div class="press-item press-video">
+        <button type="button" class="pv-frame" data-yt="JY1tSruoJ4g" aria-label="KBS 9시 뉴스 영상 재생">
+          <video class="pv-clip" src="kbs-clip.mp4" poster="kbs-clip-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="pv-play" aria-hidden="true"></span>
+        </button>
+        <div class="pv-body">
+          <div class="pr-meta"><span class="pr-outlet">KBS 9시 뉴스</span><span class="pr-date">2026. 10. 7.</span></div>
+          <h3>셀프주유 '정액·정량' 선택 안 해도 가능?…"연 천억 줄줄"</h3>
+          <p>셀프주유기가 정액·정량 버튼만 보여주고 그대로 거래를 끝낼 수 있다는 사실은 알리지 않아 소비자가 잘못 선택할 우려가 있으며, 표시광고법 위반에 해당할 것으로 보인다는 의견을 밝혔습니다.</p>
+          <a class="pr-link" href="https://www.youtube.com/watch?v=JY1tSruoJ4g" target="_blank" rel="noopener">유튜브에서 보기</a>
+        </div>
+      </div>
       <a class="press-item" href="https://www.sidae.com/article/2026093019531693286" target="_blank" rel="noopener">
         <div class="pr-meta"><span class="pr-outlet">동행미디어 시대</span><span class="pr-date">2026. 9. 30.</span></div>
         <h3>'콩주머니 사건'에 충격받은 교사들, "실내체육도 포기해야 하나?"</h3>
@@ -1256,5 +1275,9 @@ watch(tk,function(){tk.classList.remove('paused')},function(){tk.classList.add('
 document.addEventListener('visibilitychange',function(){if(!v)return;document.hidden?v.pause():v.play().catch(function(){})});
 })();</script>
 <script>(function(){var dd=document.querySelector('.dd');if(!dd)return;var t=dd.querySelector('.dd-toggle');t.addEventListener('click',function(e){e.preventDefault();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o)});})();</script>
+<script>
+document.querySelectorAll('.pv-frame').forEach(function(b){b.addEventListener('click',function(){var id=b.getAttribute('data-yt');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';b.innerHTML='';b.appendChild(f);b.style.cursor='default';},{once:true});});
+(function(){var v=document.querySelector('.pv-clip');if(!v)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!('IntersectionObserver' in window)){v.play().catch(function(){});return;}new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.25}).observe(v);})();
+</script>
 </body>
 </html>

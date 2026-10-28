@@ -593,6 +593,18 @@ body.menu-open{overflow:hidden;touch-action:none}
     <p class="sec-lede">이수담 변호사의 인터뷰와 법률 견해가 실린 보도입니다.</p>
     <div class="press-list">
       <div class="press-item press-video">
+        <button type="button" class="pv-frame" data-yt="BqImzygwbbo" aria-label="KBS 9시 뉴스 영상 재생">
+          <video class="pv-clip" src="kbs-clip2.mp4" poster="kbs-clip2-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="pv-play" aria-hidden="true"></span>
+        </button>
+        <div class="pv-body">
+          <div class="pr-meta"><span class="pr-outlet">KBS 9시 뉴스</span><span class="pr-date">2026. 10. 28.</span></div>
+          <h3>애견 유치원서 던진 '휴대전화'에 죽은 강아지…처벌은 벌금형?</h3>
+          <p>동물학대는 최대 징역 3년까지 처벌할 수 있도록 되어 있지만 실제로는 대부분 벌금형에 그치고 있어, 양형에서 더 무겁게 처벌할 필요가 있다는 의견을 밝혔습니다.</p>
+          <a class="pr-link" href="https://www.youtube.com/watch?v=BqImzygwbbo" target="_blank" rel="noopener">유튜브에서 보기</a>
+        </div>
+      </div>
+      <div class="press-item press-video">
         <button type="button" class="pv-frame" data-yt="JY1tSruoJ4g" aria-label="KBS 9시 뉴스 영상 재생">
           <video class="pv-clip" src="kbs-clip.mp4" poster="kbs-clip-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
           <span class="pv-play" aria-hidden="true"></span>
@@ -1331,7 +1343,7 @@ document.addEventListener('visibilitychange',function(){if(!v)return;document.hi
 <script>(function(){var dd=document.querySelector('.dd');if(!dd)return;var t=dd.querySelector('.dd-toggle');t.addEventListener('click',function(e){e.preventDefault();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o)});})();</script>
 <script>
 document.querySelectorAll('.pv-frame').forEach(function(b){b.addEventListener('click',function(){var id=b.getAttribute('data-yt');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';b.innerHTML='';b.appendChild(f);b.style.cursor='default';},{once:true});});
-(function(){var v=document.querySelector('.pv-clip');if(!v)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!('IntersectionObserver' in window)){v.play().catch(function(){});return;}new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.25}).observe(v);})();
+(function(){var vs=document.querySelectorAll('.pv-clip');if(!vs.length)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!('IntersectionObserver' in window)){vs.forEach(function(v){v.play().catch(function(){});});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.25});vs.forEach(function(v){io.observe(v);});})();
 </script>
 <script>(function(){try{var s=sessionStorage,k='sd_trail',d=JSON.parse(s.getItem(k)||'null'),p=location.pathname.replace(/^\/+/,'').replace(/\.html$/,'')||'index';if(!d){var r='',u='';try{if(document.referrer){var h=new URL(document.referrer).host;if(h!==location.host)r=h}}catch(e){}try{u=new URLSearchParams(location.search).get('utm_source')||''}catch(e){}d={f:p,r:r,u:u,p:[]}}if(d.p[d.p.length-1]!==p)d.p.push(p);if(d.p.length>8)d.p=d.p.slice(-8);s.setItem(k,JSON.stringify(d))}catch(e){}})();</script>
 </body>

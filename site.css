@@ -60,14 +60,13 @@ section.press .press-item:first-child{border-top:1px solid var(--navy)}
 section.press .press-item:hover{transform:none;border-color:var(--rule)}
 section.press .press-item:first-child:hover{border-color:var(--navy)}
 section.press .press-video{grid-template-columns:minmax(0,.62fr) minmax(0,1fr)}
-section.press .press-item:first-child.press-video{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
 .press-item h3{color:var(--ink)}
 .pr-outlet{color:var(--navy)}
 .pr-link{color:var(--navy);border-bottom-width:1px}
 .pv-play{background:rgba(11,42,79,.9)}
 .press-channels a{color:var(--navy);border:0;border-bottom:1px solid var(--navy);padding:0}
 @media(max-width:700px){
-  section.press .press-video,section.press .press-item:first-child.press-video{grid-template-columns:1fr}
+  section.press .press-video{grid-template-columns:1fr}
 }
 
 /* 일하는 방식: 글 한 편 */

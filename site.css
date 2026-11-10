@@ -1,16 +1,16 @@
-/* 사이트 공통 인상: 흰 바탕, 로고 남색, 본고딕 본문과 명조 제목, 직각 모서리. 각 페이지의 style 태그 뒤에 불러온다. */
+/* 사이트 공통 인상: 흰 바탕, 로고 남색, 본고딕 한 가지(대형 로펌과 같은 계열), 직각 모서리. 각 페이지의 style 태그 뒤에 불러온다. */
 :root{
   --navy:#0B2A4F; --deep:#071D38; --deep-2:#0B2A4F; --ink:#222629; --ink-2:#5F6873; --rule:#DDE1E6; --pale:#F3F5F8; --steel:#7291A7;
   --on-navy:#B9C5D5; --on-navy-rule:rgba(255,255,255,.18);
   --bg:#FFFFFF; --mist:var(--pale); --text:var(--ink); --muted:var(--ink-2); --line:var(--rule);
   --cobalt:var(--navy); --soft:transparent; --accent:var(--navy);
   --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --serif:"Noto Serif KR","Apple SD Gothic Neo",serif;
+  --serif:var(--sans);
 }
 html{scroll-behavior:auto}
 body{background:#fff;font-family:var(--sans);letter-spacing:-.01em}
 body *{border-radius:0!important}
-h1,h2,h3{font-family:var(--serif);font-weight:600}
+h1,h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.025em}
 body h1,body h2{color:var(--navy)}
 
 /* 상단 메뉴 */
@@ -73,7 +73,7 @@ section.press .press-video{grid-template-columns:minmax(0,.62fr) minmax(0,1fr)}
 section.way{padding:112px 0;background:var(--pale)}
 .letter{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:48px}
 .letter .sec-title{position:sticky;top:112px;align-self:start}
-.letter-body{max-width:37em;font-family:var(--serif);font-size:17.5px;font-weight:400;line-height:2.05;color:var(--ink);letter-spacing:-.015em}
+.letter-body{max-width:37em;font-family:var(--sans);font-size:17px;font-weight:400;line-height:1.95;color:var(--ink);letter-spacing:-.015em}
 .letter-body p+p{margin-top:1.45em}
 .letter-body .letter-sign{margin-top:2.2em;text-align:right;font-weight:600;color:var(--navy)}
 @media(max-width:860px){
@@ -213,7 +213,7 @@ body>header:not(.hero) .cta{border:1px solid rgba(255,255,255,.7);padding:7px 16
 .law,.src,.toc{background:transparent;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0}
 a.press,.kbs{border:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0}
 ol.flow li::before{color:var(--steel)}
-.collist b{font-family:var(--serif);font-weight:600;color:var(--navy)}
+.collist b{font-family:var(--sans);font-weight:700;color:var(--navy)}
 .qa summary::before{color:var(--steel)}
 .ctabox{background:var(--navy)}
 .ctabox h2{color:#fff}
